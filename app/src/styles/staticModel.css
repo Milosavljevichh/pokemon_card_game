@@ -1,0 +1,39 @@
+#root {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+body {
+    margin: 0;
+}
+
+#header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 85vw;
+    margin: 0 auto;
+}
+
+img {
+    max-width: 100%;
+}
+
+#container {
+    margin: 0 auto;
+    width: 90vw;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 18px;
+    margin: 10px;
+}
+
+.card {
+    border: #000 2px solid;
+}
