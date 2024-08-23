@@ -1,7 +1,9 @@
-function Card() {
+
+function Card({url, action}) {
+
     return (
-        <div className="card">
-            <img src="placeholder.jpg" alt="" />
+        <div className="card" onClick={action}>
+            <img src={url} alt="" />
             <p>Cat 1</p>
         </div>
     )
