@@ -28,14 +28,16 @@ img {
 
 .row {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
     gap: 18px;
     margin: 10px;
+    flex-wrap: wrap;
 }
 
 .card {
     border: #000 2px solid;
+    width: 15%;
 }
 
 .card:hover {

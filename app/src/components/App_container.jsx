@@ -15,9 +15,7 @@ function AppContainer() {
         newArr.push(pokemon)
         setSelectedPokemons(newArr)
         let result = selectedPokemons.filter((word) => word == pokemon);
-        console.log(pokemon)
-        console.log(selectedPokemons)
-        // if (result.length) console.log(result)
+        if (result.length) setCurrentScore(0)
     }
 
     function incrementScore() {

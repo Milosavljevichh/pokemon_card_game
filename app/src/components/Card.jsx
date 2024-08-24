@@ -1,8 +1,9 @@
 import { useState } from "react";
 
-function Card({url, action, addSelectedPokemon}) {
+function Card({url,  name, action, addSelectedPokemon, incrementScore}) {
 
     function johnDoe() {
+        incrementScore()
         action()
         addSelectedPokemon(url)
     }
@@ -10,7 +11,7 @@ function Card({url, action, addSelectedPokemon}) {
     return (
         <div className="card" onClick={johnDoe}>
             <img src={url} alt="" />
-            <p>Cat 1</p>
+            <p>{name}</p>
         </div>
     )
 }
