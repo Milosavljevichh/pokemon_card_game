@@ -5,7 +5,7 @@ const pokemons = ['ditto', 'articuno', 'mew', 'mewtwo', 'pikachu', 'snorlax', 'e
 const apiKey = import.meta.env.VITE_API_KEY
 
 
-function Card_container({incrementScore}) {
+function Card_container({incrementScore, addSelectedPokemon}) {
 
     const [pokemonData, setPokemonData] = useState([])
     const [loadedData, setLoadedData] = useState(false)
@@ -46,20 +46,20 @@ function Card_container({incrementScore}) {
     return (
         <div id="container">
             <div className="row">
-                <Card url={pokemonData[0]} action={randomizeCards} />
-                <Card url={pokemonData[1]} action={randomizeCards} />
-                <Card url={pokemonData[2]} action={randomizeCards} />
-                <Card url={pokemonData[3]} action={randomizeCards} />
-                <Card url={pokemonData[4]} action={randomizeCards} />
-                <Card url={pokemonData[5]} action={randomizeCards} />
+                <Card url={pokemonData[0]} action={randomizeCards} addSelectedPokemon={addSelectedPokemon} />
+                <Card url={pokemonData[1]} action={randomizeCards} addSelectedPokemon={addSelectedPokemon} />
+                <Card url={pokemonData[2]} action={randomizeCards} addSelectedPokemon={addSelectedPokemon} />
+                <Card url={pokemonData[3]} action={randomizeCards} addSelectedPokemon={addSelectedPokemon} />
+                <Card url={pokemonData[4]} action={randomizeCards} addSelectedPokemon={addSelectedPokemon} />
+                <Card url={pokemonData[5]} action={randomizeCards} addSelectedPokemon={addSelectedPokemon} />
             </div>
             <div className="row">
-                <Card url={pokemonData[6]} action={randomizeCards} />
-                <Card url={pokemonData[7]} action={randomizeCards} />
-                <Card url={pokemonData[8]} action={randomizeCards} />
-                <Card url={pokemonData[9]} action={randomizeCards} />
-                <Card url={pokemonData[10]} action={randomizeCards} />
-                <Card url={pokemonData[11]} action={randomizeCards} />
+                <Card url={pokemonData[6]} action={randomizeCards} addSelectedPokemon={addSelectedPokemon} />
+                <Card url={pokemonData[7]} action={randomizeCards} addSelectedPokemon={addSelectedPokemon} />
+                <Card url={pokemonData[8]} action={randomizeCards} addSelectedPokemon={addSelectedPokemon} />
+                <Card url={pokemonData[9]} action={randomizeCards} addSelectedPokemon={addSelectedPokemon} />
+                <Card url={pokemonData[10]} action={randomizeCards} addSelectedPokemon={addSelectedPokemon} />
+                <Card url={pokemonData[11]} action={randomizeCards} addSelectedPokemon={addSelectedPokemon} />
             </div>
         </div>
     )
