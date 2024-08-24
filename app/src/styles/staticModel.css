@@ -37,3 +37,7 @@ img {
 .card {
     border: #000 2px solid;
 }
+
+.card:hover {
+    cursor: pointer;
+}

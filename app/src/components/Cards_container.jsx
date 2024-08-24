@@ -1,16 +1,16 @@
 import Card from "./card";
 import { useEffect } from "react"
 import { useState } from "react";
-
 const pokemons = ['ditto', 'articuno', 'mew', 'mewtwo', 'pikachu', 'snorlax', 'ekans', 'abra', 'golduck', 'gyarados', 'onix', 'bulbasaur']
 const apiKey = import.meta.env.VITE_API_KEY
 
 
-function Card_container() {
+function Card_container({incrementScore}) {
 
     const [pokemonData, setPokemonData] = useState([])
     const [loadedData, setLoadedData] = useState(false)
 
+    //get images from the API
     async function convertData() {
         let newPkmnData = []
         for (let i = 0; i<pokemons.length;i++){
@@ -23,7 +23,9 @@ function Card_container() {
         setPokemonData(newPkmnData)
     }
 
+    //randomize cards on click
     function randomizeCards() {
+        incrementScore()
         let newData = []
         let randomNum = 0;
         let n = pokemonData.length
@@ -32,17 +34,14 @@ function Card_container() {
             let newPkmn = pokemonData.slice(randomNum, randomNum + 1)
             pokemonData.splice(randomNum, 1);
             newData.push(newPkmn)
-            console.log(pokemonData)
         }
         setPokemonData(newData)
     }
 
-
+    //load images
     useEffect(() => {
         if (!loadedData){convertData(), setLoadedData(true)}
     }, [pokemonData])
-
-    console.log(pokemonData)
 
     return (
         <div id="container">
