@@ -12,9 +12,12 @@ function Card_container({ incrementScore, addSelectedPokemon }) {
         let newPkmnData = [];
         console.log('converting...');
         for (let i = 0; i < pokemons.length; i++) {
+            let obj = {}
             const response = await fetch(apiKey + pokemons[i]);
             const json = await response.json();
-            newPkmnData.push(json.sprites.front_default);
+            obj.url = json.sprites.front_default
+            obj.name = pokemons[i]
+            newPkmnData.push(obj);
         }
         setPokemonUrls(newPkmnData);
     }
@@ -41,11 +44,11 @@ function Card_container({ incrementScore, addSelectedPokemon }) {
     return (
         <div id="container">
             <div className="row">
-                {pokemonUrls.map((url, i) => (
+                {pokemonUrls.map((obj) => (
                     <Card 
-                        url={url} 
-                        key={pokemons[i]} 
-                        name={pokemons[i]} 
+                        url={obj.url} 
+                        key={obj.name} 
+                        name={obj.name} 
                         action={randomizeCards} 
                         addSelectedPokemon={addSelectedPokemon} 
                         incrementScore={incrementScore} 

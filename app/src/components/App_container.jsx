@@ -11,11 +11,13 @@ function AppContainer() {
 
     //keep track of selected pokemons
     function addSelectedPokemon(pokemon) {
-        let newArr = selectedPokemons.slice()
-        newArr.push(pokemon)
-        setSelectedPokemons(newArr)
         let result = selectedPokemons.filter((word) => word == pokemon);
-        if (result.length) setCurrentScore(0)
+        if (result.length) {resetScore()}
+         else {
+            let newArr = selectedPokemons.slice()
+            newArr.push(pokemon)
+            setSelectedPokemons(newArr)
+        }
     }
 
     function incrementScore() {
@@ -24,6 +26,7 @@ function AppContainer() {
 
     function resetScore() {
         setCurrentScore(0)
+        setSelectedPokemons([])
     }
 
     if (currentScore > bestScore) setbestScore(currentScore)
