@@ -1,16 +1,17 @@
 import Card from "./card";
 import { useEffect, useState } from "react";
 
+//info for the API
 const pokemons = ['ditto', 'articuno', 'mew', 'mewtwo', 'pikachu', 'snorlax', 'ekans', 'abra', 'golduck', 'gyarados', 'onix', 'bulbasaur'];
 const apiKey = import.meta.env.VITE_API_KEY;
 
 function Card_container({ incrementScore, addSelectedPokemon }) {
-    const [pokemonUrls, setPokemonUrls] = useState([]);
+    //holds pokemon objects (name and picture URL)
+    const [pokemonObjects, setpokemonObjects] = useState([]);
 
-    // Fetch images from the API
-    async function convertData() {
+    // Fetch info from the API
+    async function fetchData() {
         let newPkmnData = [];
-        console.log('converting...');
         for (let i = 0; i < pokemons.length; i++) {
             let obj = {}
             const response = await fetch(apiKey + pokemons[i]);
@@ -19,12 +20,12 @@ function Card_container({ incrementScore, addSelectedPokemon }) {
             obj.name = pokemons[i]
             newPkmnData.push(obj);
         }
-        setPokemonUrls(newPkmnData);
+        setpokemonObjects(newPkmnData);
     }
 
     // Randomize cards on click
     function randomizeCards() {
-        let copy = [...pokemonUrls]; 
+        let copy = [...pokemonObjects]; 
         let randomNum;
         let length = copy.length;
 
@@ -33,18 +34,19 @@ function Card_container({ incrementScore, addSelectedPokemon }) {
             [copy[i], copy[randomNum]] = [copy[randomNum], copy[i]];
         }
 
-        setPokemonUrls(copy); 
+        setpokemonObjects(copy); 
         incrementScore();
     }
 
+    //fetch data only on mount
     useEffect(() => {
-        convertData();
+        fetchData();
     }, []);
 
     return (
         <div id="container">
             <div className="row">
-                {pokemonUrls.map((obj) => (
+                {pokemonObjects.map((obj) => (
                     <Card 
                         url={obj.url} 
                         key={obj.name} 

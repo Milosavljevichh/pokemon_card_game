@@ -5,11 +5,12 @@ import { useState } from 'react'
 
 function AppContainer() {
 
+    //keep track of the score
     const [currentScore, setCurrentScore] = useState(0)
     const [bestScore, setbestScore] = useState(0)
+    //keep track of already selected pokemons
     const [selectedPokemons, setSelectedPokemons] = useState([])
 
-    //keep track of selected pokemons
     function addSelectedPokemon(pokemon) {
         let result = selectedPokemons.filter((word) => word == pokemon);
         if (result.length) {resetScore()}
@@ -20,6 +21,7 @@ function AppContainer() {
         }
     }
 
+    //functions for manipulating the score
     function incrementScore() {
         setCurrentScore(currentScore + 1)
     }
@@ -34,7 +36,7 @@ function AppContainer() {
     return (
         <>    
             <Header currentScore={currentScore} bestScore={bestScore} />
-            <Card_container incrementScore={incrementScore} resetScore={resetScore} addSelectedPokemon={addSelectedPokemon} />
+            <Card_container incrementScore={incrementScore} addSelectedPokemon={addSelectedPokemon} />
         </>
     )
 }

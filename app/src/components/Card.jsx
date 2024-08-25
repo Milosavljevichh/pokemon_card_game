@@ -1,15 +1,13 @@
-import { useState } from "react";
-
 function Card({url,  name, action, addSelectedPokemon, incrementScore}) {
 
-    function johnDoe() {
+    function callFunctions() {
         incrementScore()
         action()
         addSelectedPokemon(url)
     }
 
     return (
-        <div className="card" onClick={johnDoe}>
+        <div className="card" onClick={callFunctions}>
             <img src={url} alt="" />
             <p>{name}</p>
         </div>
