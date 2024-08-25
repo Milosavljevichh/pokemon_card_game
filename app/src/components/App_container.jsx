@@ -1,6 +1,6 @@
 import '../styles/staticModel.css'
-import Header from './header'
-import Card_container from './cards_container'
+import Header from './Header'
+import Card_container from './Cards_container'
 import { useState } from 'react'
 
 function AppContainer() {

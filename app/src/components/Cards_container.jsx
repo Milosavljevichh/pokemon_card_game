@@ -1,4 +1,4 @@
-import Card from "./card";
+import Card from "./Card";
 import { useEffect, useState } from "react";
 
 //info for the API
