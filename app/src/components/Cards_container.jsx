@@ -6,6 +6,7 @@ const pokemons = ['ditto', 'articuno', 'mew', 'mewtwo', 'pikachu', 'snorlax', 'e
 const apiKey = import.meta.env.VITE_API_KEY;
 
 function Card_container({ incrementScore, addSelectedPokemon }) {
+    const[isLoaded, setIsLoaded] = useState(false)
     //holds pokemon objects (name and picture URL)
     const [pokemonObjects, setpokemonObjects] = useState([]);
 
@@ -21,6 +22,7 @@ function Card_container({ incrementScore, addSelectedPokemon }) {
             newPkmnData.push(obj);
         }
         setpokemonObjects(newPkmnData);
+        setIsLoaded(true)
     }
 
     // Randomize cards on click
@@ -42,6 +44,12 @@ function Card_container({ incrementScore, addSelectedPokemon }) {
     useEffect(() => {
         fetchData();
     }, []);
+
+    if (!isLoaded) {
+        return (<div id="container">
+            <div className="loader"></div>
+        </div>)
+    }
 
     return (
         <div id="container">
