@@ -1,0 +1,40 @@
+{
+  "name": "pokemon_card_game",
+  "version": "1.0.0",
+  "description": "This project is a Pokémon-themed memory game built with React. The game challenges users to click on different Pokémon cards without clicking the same one twice. The score increases with each unique card clicked, and the \"Best Score\" keeps track of the highest score achieved during the session. The cards shuffle each time a card is clicked, adding a layer of difficulty to the game.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "storybook-generate": "sb-rn-get-stories",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.26.0",
+    "@chromatic-com/storybook": "^3.2.2",
+    "@gorhom/bottom-sheet": "^5.0.5",
+    "@react-native-async-storage/async-storage": "^2.0.0",
+    "@react-native-community/datetimepicker": "^8.2.0",
+    "@react-native-community/slider": "^4.5.5",
+    "@storybook/addon-essentials": "^8.4.2",
+    "@storybook/addon-interactions": "^8.4.2",
+    "@storybook/addon-onboarding": "^8.4.2",
+    "@storybook/addon-ondevice-actions": "^8.4.2",
+    "@storybook/addon-ondevice-controls": "^8.4.2",
+    "@storybook/blocks": "^8.4.2",
+    "@storybook/react": "^8.4.2",
+    "@storybook/react-native": "^8.4.2",
+    "@storybook/react-vite": "^8.4.2",
+    "@storybook/test": "^8.4.2",
+    "babel-loader": "^8.4.1",
+    "prop-types": "^15.8.1",
+    "react-native-gesture-handler": "^2.20.2",
+    "react-native-reanimated": "^3.16.1",
+    "react-native-safe-area-context": "^4.14.0",
+    "react-native-svg": "^15.8.0",
+    "storybook": "^8.4.2"
+  }
+}
